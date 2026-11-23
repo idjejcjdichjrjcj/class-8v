@@ -1,0 +1,267 @@
+/* =========================================
+   МОИ ЦВЕТА И ПЕРЕМЕННЫЕ
+   ========================================= */
+:root{
+  --ink:#1F2A44;
+  --ink-soft:#394A6B;
+  --paper:#F4EFE4;
+  --paper-dim:#EAE2CF;
+  --red:#B23A32;
+  --gold:#C99A45;
+  --white:#FFFDF8;
+  --radius:10px;
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+/* =========================================
+   ЗВЁЗДНЫЙ ФОН
+   ========================================= */
+body{
+  margin:0;
+  background-color: #0b132b; 
+  /* Звёзды через градиенты */
+  background-image: 
+    radial-gradient(1.5px 1.5px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 40px 70px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 50px 160px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 130px 80px, #ffffff, rgba(0,0,0,0));
+  background-size: 150px 200px; 
+  background-attachment: fixed;
+  
+  color:var(--ink);
+  font-family:var(--sans);
+  line-height:1.5;
+}
+
+/* =========================================
+   ШАПКА САЙТА
+   ========================================= */
+.topbar{
+  position:sticky; top:0; z-index:40;
+  background:var(--ink);
+  border-bottom:3px solid var(--red);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+}
+.topbar__inner{
+  max-width:1100px; margin:0 auto;
+  padding:14px 20px;
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:10px;
+}
+.brand{display:flex; align-items:baseline; gap:10px; color:var(--white);}
+.brand__num{
+  font-family:var(--serif); font-size:1.6rem; font-weight:700;
+  color:var(--gold);
+}
+.brand__school{font-size:.85rem; opacity:.85;}
+
+.burger{
+  display:none; flex-direction:column; justify-content:center; gap:5px;
+  width:34px; height:30px; background:none; border:none; cursor:pointer;
+  padding:0;
+}
+.burger span{display:block; height:2px; width:100%; background:var(--white); border-radius:2px;}
+
+.tabs{display:flex; gap:4px; flex-wrap: wrap;} /* Добавил flex-wrap, так как вкладок стало больше */
+.tab{
+  background:none; border:none; color:var(--white);
+  font-family:var(--sans); font-size:.92rem;
+  padding:8px 14px; border-radius:6px 6px 0 0;
+  cursor:pointer; opacity:.75;
+  position:relative;
+  transition:opacity .2s ease, background .2s ease;
+}
+.tab:hover{opacity:1; background:rgba(255,255,255,.06);}
+.tab.is-active{opacity:1; color:var(--gold);}
+.tab.is-active::after{
+  content:""; position:absolute; left:10%; right:10%; bottom:-3px; height:3px;
+  background:var(--gold); border-radius:3px;
+}
+
+/* =========================================
+   ОСНОВНОЙ БЛОК (MAIN)
+   ========================================= */
+main{
+  max-width:1100px; 
+  margin: 34px auto; 
+  background: var(--paper);
+  padding: 34px 20px 60px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.panel{display:none;}
+.panel.is-active{display:block; animation:fadeUp .45s ease;}
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(10px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.section-title{
+  font-family:var(--serif); font-size:1.9rem; margin:0 0 24px;
+  padding-bottom:10px; border-bottom:2px solid var(--paper-dim);
+}
+
+/* =========================================
+   ГЛАВНАЯ СТРАНИЦА
+   ========================================= */
+.hero{
+  display:grid; grid-template-columns:1.1fr .9fr; gap:36px;
+  align-items:center; margin-bottom:40px;
+}
+.hero__eyebrow{color:var(--red); font-size:.85rem; margin:0 0 6px; font-weight:600; letter-spacing:.02em;}
+.hero__title{
+  font-family:var(--serif); font-size:5.2rem; line-height:1; margin:0;
+  color:var(--ink);
+}
+.hero__letter{color:var(--red);}
+.hero__sub{font-size:1.15rem; color:var(--ink-soft); margin:6px 0 18px;}
+.hero__desc{max-width:46ch; color:var(--ink-soft);}
+
+.hero__photo img{
+  width:100%; height:320px; object-fit:cover; border-radius:var(--radius);
+  box-shadow:0 10px 26px rgba(31,42,68,.22);
+  border: 4px solid var(--white); 
+}
+
+.home-grid{
+  display:grid; grid-template-columns:repeat(4,1fr); gap:14px;
+}
+.home-card{
+  background:var(--white); border:1px solid var(--paper-dim);
+  border-radius:var(--radius); padding:20px 16px; text-align:left;
+  cursor:pointer; display:flex; flex-direction:column; gap:6px;
+  transition:transform .2s ease, border-color .2s ease;
+}
+.home-card:hover{transform:translateY(-3px); border-color:var(--gold);}
+.home-card__num{font-family:var(--serif); color:var(--gold); font-size:1rem;}
+.home-card__title{font-weight:700;}
+.home-card__text{font-size:.85rem; color:var(--ink-soft);}
+
+/* =========================================
+   О КЛАССЕ
+   ========================================= */
+.about-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:32px; align-items:center;}
+.about-text p{color:var(--ink-soft); max-width:50ch;}
+.about-photo img{width:100%; height:280px; object-fit:cover; border-radius:var(--radius); border: 3px solid var(--white);}
+
+/* =========================================
+   РАСПИСАНИЕ
+   ========================================= */
+.table-wrap{overflow-x:auto; border-radius:var(--radius); box-shadow: 0 4px 10px rgba(0,0,0,0.05);}
+table.schedule{
+  width:100%; border-collapse:collapse; background:var(--white);
+  min-width:560px;
+}
+table.schedule th, table.schedule td{
+  padding:12px 14px; border-bottom:1px solid var(--paper-dim); text-align:left; font-size:.92rem;
+}
+table.schedule th{background:var(--ink); color:var(--white); font-weight:600;}
+table.schedule tr:nth-child(even) td{background:var(--paper-dim);}
+.note{color:var(--ink-soft); font-size:.85rem; margin-top:10px;}
+
+/* =========================================
+   ГАЛЕРЕЯ
+   ========================================= */
+.gallery{
+  display:grid; grid-template-columns:repeat(4,1fr); gap:10px;
+}
+.gallery__item{
+  padding:0; border:none; background:none; cursor:pointer;
+  border-radius:8px; overflow:hidden; aspect-ratio:4/3;
+}
+.gallery__item img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s ease;}
+.gallery__item:hover img{transform:scale(1.06);}
+
+.lightbox{
+  display:none; position:fixed; inset:0; background:rgba(15,20,34,.92);
+  z-index:60; align-items:center; justify-content:center; padding:24px;
+}
+.lightbox.is-open{display:flex;}
+.lightbox img{max-width:92vw; max-height:88vh; border-radius:6px;}
+
+/* =========================================
+   КАК СДЕЛАНО (НОВЫЕ КАРТОЧКИ)
+   ========================================= */
+/* Сделал сетку из карточек, чтобы текст не шел сплошным полотном */
+.tech-grid {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 20px;
+}
+.tech-card {
+  background: var(--white); 
+  padding: 20px; 
+  border-radius: var(--radius); 
+  border-left: 4px solid var(--gold); /* Золотая полоска для красоты */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.tech-card h3 { 
+  margin-top: 0; 
+  color: var(--ink); 
+  font-family: var(--serif); 
+}
+.tech-card p { 
+  color: var(--ink-soft); 
+  font-size: 0.95rem; 
+  margin-bottom: 0; 
+  line-height: 1.6;
+}
+/* Стили для кода внутри текста */
+.tech-card code { 
+  background: var(--paper-dim); 
+  padding: 2px 6px; 
+  border-radius: 4px; 
+  font-family: monospace; 
+  font-size: 0.9em; 
+  color: var(--red); /* Красный цвет, чтобы выделялось */
+}
+
+/* =========================================
+   КОНТАКТЫ И ПОДВАЛ
+   ========================================= */
+.contact-card{
+  background:var(--white); border-left:4px solid var(--red);
+  border-radius:var(--radius); padding:26px 28px; max-width:440px;
+}
+.contact-card__role{color:var(--ink-soft); font-size:.85rem; margin:0 0 4px;}
+.contact-card__name{font-family:var(--serif); font-size:1.4rem; margin:0 0 14px;}
+.contact-card__line{margin:4px 0; color:var(--ink-soft);}
+
+.footer{
+  text-align:center; padding:18px; color:var(--white); font-size:.8rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8); 
+}
+
+/* =========================================
+   АДАПТИВ (ЧТОБЫ РАБОТАЛО НА ТЕЛЕФОНАХ)
+   ========================================= */
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;}
+  .hero__photo img{height:220px;}
+  .home-grid{grid-template-columns:repeat(2,1fr);}
+  .about-grid{grid-template-columns:1fr;}
+  .gallery{grid-template-columns:repeat(3,1fr);}
+  .tech-grid { grid-template-columns: 1fr; } /* На планшетах карточки встают в один столбец */
+}
+
+@media (max-width:640px){
+  .burger{display:flex;}
+  .tabs{
+    display:none; flex-direction:column; width:100%;
+    background:var(--ink); padding-top:8px;
+  }
+  .tabs.is-open{display:flex;}
+  .tab{border-radius:6px; text-align:left; padding: 10px;}
+  .tab.is-active::after{display:none;}
+  .tab.is-active{background:rgba(201,154,69,.15);}
+  .hero__title{font-size:3.6rem;}
+  .home-grid{grid-template-columns:1fr 1fr;}
+  .gallery{grid-template-columns:repeat(2,1fr);}
+  main { margin: 10px; padding: 20px 15px; }
+}

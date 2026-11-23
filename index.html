@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8В класс — МБОУ СОШ №49 г. Орла</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar__inner">
+    <div class="brand">
+      <span class="brand__num">8В</span>
+      <span class="brand__school">МБОУ СОШ №49&nbsp;г.&nbsp;Орла</span>
+    </div>
+    <!-- Бургер для мобилок -->
+    <button class="burger" id="burger" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="tabs" id="tabs">
+      <button class="tab is-active" data-tab="home">Главная</button>
+      <button class="tab" data-tab="about">О классе</button>
+      <button class="tab" data-tab="schedule">Расписание</button>
+      <button class="tab" data-tab="gallery">Галерея</button>
+      <!-- Добавил новую вкладку для защиты проекта на конкурсе -->
+      <button class="tab" data-tab="tech">Как сделано</button>
+      <button class="tab" data-tab="contacts">Контакты</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ГЛАВНАЯ СТРАНИЦА -->
+  <section class="panel is-active" id="home" data-panel>
+    <div class="hero">
+      <div class="hero__text">
+        <p class="hero__eyebrow">Школьный сайт</p>
+        <h1 class="hero__title">8<span class="hero__letter">В</span></h1>
+        <p class="hero__sub">класс МБОУ СОШ №49 города Орла</p>
+        <p class="hero__desc">Тут у нас расписание, фотки с линеек, поездок и праздников, и контакты классного руководителя. Листайте вкладки сверху..</p>
+      </div>
+      <!-- Сюда я вставил тот самый коллаж с лицами, который все скидывали -->
+      <div class="hero__photo">
+        <img src="images/hero-collage.jpg" alt="Класс 8В — фотоколлаж">
+      </div>
+    </div>
+
+    <!-- Кнопки-карточки для быстрого перехода -->
+    <div class="home-grid">
+      <button class="home-card" data-goto="about">
+        <span class="home-card__num">01</span>
+        <span class="home-card__title">О классе</span>
+        <span class="home-card__text">Кто мы и чем занимаемся</span>
+      </button>
+      <button class="home-card" data-goto="schedule">
+        <span class="home-card__num">02</span>
+        <span class="home-card__title">Расписание</span>
+        <span class="home-card__text">Уроки по дням недели</span>
+      </button>
+      <button class="home-card" data-goto="gallery">
+        <span class="home-card__num">03</span>
+        <span class="home-card__title">Галерея</span>
+        <span class="home-card__text">Фото с линеек и поездок</span>
+      </button>
+      <button class="home-card" data-goto="contacts">
+        <span class="home-card__num">04</span>
+        <span class="home-card__title">Контакты</span>
+        <span class="home-card__text">Как связаться с классным руководителем</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- О КЛАССЕ -->
+  <section class="panel" id="about" data-panel>
+    <h2 class="section-title">О классе</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>8 «В» класс школы № 49 города Орла. Ездим на экскурсии, хорошо учимся, работаем сообща..</p>
+        <p>За этот год мы побывали во многих местах и ещё побываем! Спасибо нашей школе за всё!.</p>
+      </div>
+      <div class="about-photo">
+        <img src="images/photo06.jpg" alt="Класс 8В у школы">
+      </div>
+    </div>
+  </section>
+
+  <!-- РАСПИСАНИЕ -->
+  <section class="panel" id="schedule" data-panel>
+    <h2 class="section-title">Расписание занятий (2 смена)</h2>
+    <div class="table-wrap">
+      <!-- Тут я всё переписал с той фотки, которую отдала одноклассница -->
+      <table class="schedule">
+        <thead>
+          <tr><th>№</th><th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>ОБЗР</td><td>Физкультура</td><td>Физкультура</td><td>География</td><td>Физика</td></tr>
+          <tr><td>2</td><td>Биология</td><td>Математика</td><td>Математика</td><td>Физика</td><td>РМГ</td></tr>
+          <tr><td>3</td><td>География</td><td>Музыка</td><td>Химия</td><td>Труд</td><td>История</td></tr>
+          <tr><td>4</td><td>История</td><td>Химия</td><td>Русский язык</td><td>Труд</td><td>Англ. язык</td></tr>
+          <tr><td>5</td><td>Математика</td><td>Русский язык</td><td>Русский язык</td><td>Труд</td><td>Математика</td></tr>
+          <tr><td>6</td><td>Литература</td><td>Литература</td><td>Англ. язык</td><td>Англ. язык</td><td>Русский язык</td></tr>
+          <tr><td>7</td><td>РОВ</td><td>Информатика</td><td>История</td><td>Математика</td><td>Биология</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">* Расписание переписано с официального листа, но лучше уточнять у классного руководителя.</p>
+  </section>
+
+  <!-- ГАЛЕРЕЯ -->
+  <section class="panel" id="gallery" data-panel>
+    <h2 class="section-title">Галерея</h2>
+    <div class="gallery">
+      <button class="gallery__item" data-full="images/photo01.jpg"><img src="images/photo01.jpg" alt="Линейка"></button>
+      <button class="gallery__item" data-full="images/photo02.jpg"><img src="images/photo02.jpg" alt="Класс в парке"></button>
+      <button class="gallery__item" data-full="images/photo03.jpg"><img src="images/photo03.jpg" alt="Класс с грамотой"></button>
+      <button class="gallery__item" data-full="images/photo04.jpg"><img src="images/photo04.jpg" alt="Класс на прогулке"></button>
+      <button class="gallery__item" data-full="images/photo05.jpg"><img src="images/photo05.jpg" alt="Девочки класса"></button>
+      <button class="gallery__item" data-full="images/photo07.jpg"><img src="images/photo07.jpg" alt="Класс у школы"></button>
+      <button class="gallery__item" data-full="images/photo08.jpg"><img src="images/photo08.jpg" alt="Новый год"></button>
+      <button class="gallery__item" data-full="images/photo09.jpg"><img src="images/photo09.jpg" alt="В спортзале"></button>
+      <button class="gallery__item" data-full="images/photo10.jpg"><img src="images/photo10.jpg" alt="Патриотическое мероприятие"></button>
+      <button class="gallery__item" data-full="images/photo11.jpg"><img src="images/photo11.jpg" alt="Ярмарка выпечки"></button>
+      <button class="gallery__item" data-full="images/photo12.jpg"><img src="images/photo12.jpg" alt="Продажа на ярмарке"></button>
+      <button class="gallery__item" data-full="images/photo13.jpg"><img src="images/photo13.jpg" alt="Выступление"></button>
+    </div>
+  </section>
+
+  <!-- КАК СДЕЛАНО (ДЛЯ КОНКУРСА) -->
+  <section class="panel" id="tech" data-panel>
+    <h2 class="section-title">Как сделан этот сайт</h2>
+    
+    <div class="tech-grid">
+      <div class="tech-card">
+        <h3>1. Дизайн и Звёздный фон</h3>
+        <p>Чтобы сайт не выглядел скучно, я решил сделать космический фон. Вместо картинки я использовал CSS-градиенты <code>radial-gradient</code>. Они рисуют белые точки, а свойство <code>background-attachment: fixed</code> не даёт им двигаться при скролле. Основной контент лежит на бежевом блоке с тенью, чтобы он не сливался со звёздами.</p>
+      </div>
+
+      <div class="tech-card">
+        <h3>2. Вкладки (SPA-эффект)</h3>
+        <p>Я не хотел делать кучу отдельных HTML-файлов, поэтому сделал всё на одной странице. Секции скрыты через <code>display: none</code>. Когда пользователь нажимает на кнопку в меню, мой JavaScript ловит клик и добавляет класс <code>is-active</code> нужной секции, а остальные прячет.</p>
+      </div>
+
+      <div class="tech-card">
+        <h3>3. Адаптив под телефоны</h3>
+        <p>Сайт должен хорошо выглядеть на смартфонах. Для этого я использовал <code>@media</code> запросы в CSS. Если экран меньше 640 пикселей, меню превращается в кнопку-бургер, а сетки с карточками и фотографиями перестраиваются в один или два столбца, чтобы всё влезало.</p>
+      </div>
+
+      <div class="tech-card">
+        <h3>4. Галерея и Лайтбокс</h3>
+        <p>Фотографии в галерее сделаны через <code>display: grid</code>. При наведении они плавно увеличиваются (эффект <code>transform: scale</code>). При клике на фотографию открывается затемнённый фон (лайтбокс) с увеличенной картинкой. Это тоже работает на чистом JS, без сторонних библиотек.</p>
+      </div>
+      
+      <div class="tech-card">
+        <h3>5. Оформление Расписания</h3>
+        <p>Расписание я делал в виде HTML-таблицы <code>&lt;table&gt;</code>. Чтобы она красиво выглядела, я стилизовал заголовки в тёмный цвет, а чётные строки сделал чуть темнее (через <code>nth-child(even)</code>), чтобы глаза не уставали читать. На телефонах таблицу можно скроллить вбок.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- КОНТАКТЫ -->
+  <section class="panel" id="contacts" data-panel>
+    <h2 class="section-title">Контакты классного руководителя</h2>
+    <div class="contact-card">
+      <p class="contact-card__role">Классный руководитель 8В класса</p>
+      <!-- Вставил ФИО и номер, как ты просила -->
+      <p class="contact-card__name">Светлана Николаевна</p>
+      <p class="contact-card__line">Школа: МБОУ СОШ №49 г. Орла</p>
+      <p class="contact-card__line">Телефон: +7 920 801 89 26</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>8В класс · МБОУ СОШ №49 г. Орла</p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
