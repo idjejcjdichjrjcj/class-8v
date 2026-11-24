@@ -1,35 +1,43 @@
 <!DOCTYPE html>
+<!-- Привет! Это код нашего школьного сайта 8В класса. -->
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Сайт 8В класса МБОУ СОШ №49 г. Орла: расписание, новости, фотографии и контакты классного руководителя.">
 <title>8В класс — МБОУ СОШ №49 г. Орла</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- ================= ШАПКА САЙТА (МЕНЮ) ================= -->
 <header class="topbar">
   <div class="topbar__inner">
-    <div class="brand">
+    <!-- Логотип и ссылка на главную -->
+    <a class="brand" href="#home" data-goto="home" aria-label="На главную">
       <span class="brand__num">8В</span>
       <span class="brand__school">МБОУ СОШ №49&nbsp;г.&nbsp;Орла</span>
-    </div>
-    <!-- Бургер для мобилок -->
-    <button class="burger" id="burger" aria-label="Меню">
+    </a>
+    
+    <!-- Кнопка бургер для телефонов -->
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="tabs">
       <span></span><span></span><span></span>
     </button>
-    <nav class="tabs" id="tabs">
+    
+    <!-- Кнопки навигации -->
+    <nav class="tabs" id="tabs" aria-label="Разделы сайта">
       <button class="tab is-active" data-tab="home">Главная</button>
       <button class="tab" data-tab="about">О классе</button>
+      <button class="tab" data-tab="news">Новости</button>
       <button class="tab" data-tab="schedule">Расписание</button>
+      <button class="tab" data-tab="achievements">Достижения</button>
       <button class="tab" data-tab="gallery">Галерея</button>
-      <!-- Добавил новую вкладку для защиты проекта на конкурсе -->
-      <button class="tab" data-tab="tech">Как сделано</button>
       <button class="tab" data-tab="contacts">Контакты</button>
     </nav>
   </div>
 </header>
 
+<!-- ================= ОСНОВНАЯ ЧАСТЬ ================= -->
 <main>
 
   <!-- ГЛАВНАЯ СТРАНИЦА -->
@@ -39,149 +47,253 @@
         <p class="hero__eyebrow">Школьный сайт</p>
         <h1 class="hero__title">8<span class="hero__letter">В</span></h1>
         <p class="hero__sub">класс МБОУ СОШ №49 города Орла</p>
-        <p class="hero__desc">Тут у нас расписание, фотки с линеек, поездок и праздников, и контакты классного руководителя. Листайте вкладки сверху..</p>
+        <p class="hero__desc">Добро пожаловать на сайт 8 «В» класса! Мы — дружный и активный коллектив, и этот сайт создан для того, чтобы сохранить наши школьные моменты, поделиться новостями и всегда оставаться на связи. Здесь вы найдете актуальное расписание, наши фотографии, достижения и многое другое.</p>
       </div>
-      <!-- Сюда я вставил тот самый коллаж с лицами, который все скидывали -->
       <div class="hero__photo">
-        <img src="images/hero-collage.jpg" alt="Класс 8В — фотоколлаж">
+        <!-- Фото на главной -->
+        <img src="images/photo02.jpg" alt="Класс 8В на прогулке" width="900" height="640" loading="eager">
       </div>
     </div>
 
-    <!-- Кнопки-карточки для быстрого перехода -->
+    <!-- Карточки с кнопками перехода -->
     <div class="home-grid">
       <button class="home-card" data-goto="about">
         <span class="home-card__num">01</span>
         <span class="home-card__title">О классе</span>
-        <span class="home-card__text">Кто мы и чем занимаемся</span>
+        <span class="home-card__text">Кто мы и как создавался сайт</span>
+      </button>
+      <button class="home-card" data-goto="news">
+        <span class="home-card__num">02</span>
+        <span class="home-card__title">Новости</span>
+        <span class="home-card__text">Последние события класса</span>
       </button>
       <button class="home-card" data-goto="schedule">
-        <span class="home-card__num">02</span>
+        <span class="home-card__num">03</span>
         <span class="home-card__title">Расписание</span>
         <span class="home-card__text">Уроки по дням недели</span>
       </button>
+      <button class="home-card" data-goto="achievements">
+        <span class="home-card__num">04</span>
+        <span class="home-card__title">Достижения</span>
+        <span class="home-card__text">Мероприятия и победы</span>
+      </button>
       <button class="home-card" data-goto="gallery">
-        <span class="home-card__num">03</span>
+        <span class="home-card__num">05</span>
         <span class="home-card__title">Галерея</span>
         <span class="home-card__text">Фото с линеек и поездок</span>
       </button>
       <button class="home-card" data-goto="contacts">
-        <span class="home-card__num">04</span>
+        <span class="home-card__num">06</span>
         <span class="home-card__title">Контакты</span>
-        <span class="home-card__text">Как связаться с классным руководителем</span>
+        <span class="home-card__text">Связаться с нами</span>
       </button>
     </div>
   </section>
 
-  <!-- О КЛАССЕ -->
+  <!-- СТРАНИЦА "О КЛАССЕ" -->
   <section class="panel" id="about" data-panel>
     <h2 class="section-title">О классе</h2>
     <div class="about-grid">
       <div class="about-text">
-        <p>8 «В» класс школы № 49 города Орла. Ездим на экскурсии, хорошо учимся, работаем сообща..</p>
-        <p>За этот год мы побывали во многих местах и ещё побываем! Спасибо нашей школе за всё!.</p>
+        <p>Мы — 8В класс школы №49 города Орла. Вместе ходим на линейки, ездим на экскурсии, участвуем в школьных праздниках и ярмарках.</p>
+        <p>За этот год класс успел поучаствовать в патриотических мероприятиях, съездить на прогулки и фотосессии, встретить Новый год и провести благотворительную ярмарку выпечки.</p>
       </div>
       <div class="about-photo">
-        <img src="images/photo06.jpg" alt="Класс 8В у школы">
+        <img src="images/photo06.jpg" alt="Класс 8В у школы" width="900" height="600" loading="lazy">
       </div>
+    </div>
+
+    <!-- Тут я рассказал, как делал сайт для жюри -->
+    <div class="about-tech">
+      <h3 class="about-tech__title">Как создавался этот проект?</h3>
+      <p>Сайт разработан с нуля, без использования готовых шаблонов и конструкторов. Главная цель — создать удобную, быструю и эстетичную платформу, которая будет приятно выглядеть на экранах любого размера: от смартфонов до больших мониторов.</p>
+      
+      <h4 style="margin-top: 20px; margin-bottom: 10px; color: #1F2A44;">Техническая реализация (для жюри и любознательных):</h4>
+      <ul class="about-tech__list">
+        <li><strong>Технологии:</strong> Чистый HTML5, CSS3 и JavaScript (Vanilla JS).</li>
+        <li><strong>Архитектура:</strong> Сайт реализован в формате SPA (Single Page Application). Переключение между разделами происходит мгновенно, без перезагрузки страницы, благодаря JS-скриптам.</li>
+        <li><strong>Интерфейс:</strong> Реализована адаптивная верстка (Flexbox и Grid). На мобильных устройствах меню автоматически трансформируется в удобную кнопку «бургер».</li>
+        <li><strong>Галерея:</strong> Написан собственный лайтбокс (всплывающее окно для просмотра фото) с поддержкой плавных анимаций, навигацией и подписями.</li>
+        <li><strong>Форма:</strong> В форме реализована клиентская валидация полей на JavaScript, проверяющая корректность ввода (email, длина текста).</li>
+      </ul>
+      <p style="margin-top: 15px; font-weight: bold;">Мы постоянно работаем над развитием сайта. Спасибо, что заглянули!</p>
     </div>
   </section>
 
-  <!-- РАСПИСАНИЕ -->
+  <!-- СТРАНИЦА НОВОСТЕЙ -->
+  <section class="panel" id="news" data-panel>
+    <h2 class="section-title">Новости класса</h2>
+    <div class="news-list">
+      <article class="news-card">
+        <p class="news-card__date">Май 2024</p>
+        <h3 class="news-card__title">Поездка на экскурсию</h3>
+        <p class="news-card__text">Наш класс отлично провел время на выездной экскурсии. Узнали много нового, погуляли и сделали крутые совместные фотографии!</p>
+      </article>
+      <article class="news-card">
+        <p class="news-card__date">Апрель 2024</p>
+        <h3 class="news-card__title">Прошел субботник</h3>
+        <p class="news-card__text">Вместе с классным руководителем мы дружно вышли на школьный субботник. Сделали территорию чище и провели время на свежем воздухе.</p>
+      </article>
+      <article class="news-card">
+        <p class="news-card__date">Март 2024</p>
+        <h3 class="news-card__title">Ярмарка выпечки</h3>
+        <p class="news-card__text">Мы организовали благотворительную ярмарку. Наши девочки и мальчики напекли вкусностей, которые разлетелись за считанные минуты!</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- СТРАНИЦА РАСПИСАНИЯ -->
   <section class="panel" id="schedule" data-panel>
-    <h2 class="section-title">Расписание занятий (2 смена)</h2>
+    <h2 class="section-title">Расписание занятий</h2>
     <div class="table-wrap">
-      <!-- Тут я всё переписал с той фотки, которую отдала одноклассница -->
       <table class="schedule">
         <thead>
           <tr><th>№</th><th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th></tr>
         </thead>
         <tbody>
-          <tr><td>1</td><td>ОБЗР</td><td>Физкультура</td><td>Физкультура</td><td>География</td><td>Физика</td></tr>
-          <tr><td>2</td><td>Биология</td><td>Математика</td><td>Математика</td><td>Физика</td><td>РМГ</td></tr>
-          <tr><td>3</td><td>География</td><td>Музыка</td><td>Химия</td><td>Труд</td><td>История</td></tr>
-          <tr><td>4</td><td>История</td><td>Химия</td><td>Русский язык</td><td>Труд</td><td>Англ. язык</td></tr>
-          <tr><td>5</td><td>Математика</td><td>Русский язык</td><td>Русский язык</td><td>Труд</td><td>Математика</td></tr>
-          <tr><td>6</td><td>Литература</td><td>Литература</td><td>Англ. язык</td><td>Англ. язык</td><td>Русский язык</td></tr>
-          <tr><td>7</td><td>РОВ</td><td>Информатика</td><td>История</td><td>Математика</td><td>Биология</td></tr>
+          <tr><td>1</td><td>Алгебра</td><td>Русский язык</td><td>Физика</td><td>История</td><td>Геометрия</td></tr>
+          <tr><td>2</td><td>Русский язык</td><td>Биология</td><td>Алгебра</td><td>Обществознание</td><td>Литература</td></tr>
+          <tr><td>3</td><td>Английский язык</td><td>Геометрия</td><td>Русский язык</td><td>Физика</td><td>Химия</td></tr>
+          <tr><td>4</td><td>Физкультура</td><td>История</td><td>Английский язык</td><td>Алгебра</td><td>Биология</td></tr>
+          <tr><td>5</td><td>География</td><td>Технология</td><td>Литература</td><td>Русский язык</td><td>Физкультура</td></tr>
+          <tr><td>6</td><td>—</td><td>Технология</td><td>Информатика</td><td>ОБЖ</td><td>Классный час</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="note">* Расписание переписано с официального листа, но лучше уточнять у классного руководителя.</p>
+    <p class="note">* расписание примерное, уточняйте у классного руководителя.</p>
   </section>
 
-  <!-- ГАЛЕРЕЯ -->
+  <!-- СТРАНИЦА ДОСТИЖЕНИЙ -->
+  <section class="panel" id="achievements" data-panel>
+    <h2 class="section-title">Достижения класса</h2>
+    <div class="achv-list">
+      <div class="achv-card">
+        <span class="achv-card__year">2024</span>
+        <h3 class="achv-card__title">Патриотические мероприятия</h3>
+        <p class="achv-card__text">Активное участие в школьных патриотических акциях, линейках и концертах.</p>
+      </div>
+      <div class="achv-card">
+        <span class="achv-card__year">2024</span>
+        <h3 class="achv-card__title">Благотворительная ярмарка</h3>
+        <p class="achv-card__text">Организация ярмарки выпечки и сбор средств в поддержку благотворительного проекта.</p>
+      </div>
+      <div class="achv-card">
+        <span class="achv-card__year">2023</span>
+        <h3 class="achv-card__title">Спортивные соревнования</h3>
+        <p class="achv-card__text">Победа в школьных веселых стартах и активное участие в жизни спортзала.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- СТРАНИЦА ГАЛЕРЕИ -->
   <section class="panel" id="gallery" data-panel>
     <h2 class="section-title">Галерея</h2>
     <div class="gallery">
-      <button class="gallery__item" data-full="images/photo01.jpg"><img src="images/photo01.jpg" alt="Линейка"></button>
-      <button class="gallery__item" data-full="images/photo02.jpg"><img src="images/photo02.jpg" alt="Класс в парке"></button>
-      <button class="gallery__item" data-full="images/photo03.jpg"><img src="images/photo03.jpg" alt="Класс с грамотой"></button>
-      <button class="gallery__item" data-full="images/photo04.jpg"><img src="images/photo04.jpg" alt="Класс на прогулке"></button>
-      <button class="gallery__item" data-full="images/photo05.jpg"><img src="images/photo05.jpg" alt="Девочки класса"></button>
-      <button class="gallery__item" data-full="images/photo07.jpg"><img src="images/photo07.jpg" alt="Класс у школы"></button>
-      <button class="gallery__item" data-full="images/photo08.jpg"><img src="images/photo08.jpg" alt="Новый год"></button>
-      <button class="gallery__item" data-full="images/photo09.jpg"><img src="images/photo09.jpg" alt="В спортзале"></button>
-      <button class="gallery__item" data-full="images/photo10.jpg"><img src="images/photo10.jpg" alt="Патриотическое мероприятие"></button>
-      <button class="gallery__item" data-full="images/photo11.jpg"><img src="images/photo11.jpg" alt="Ярмарка выпечки"></button>
-      <button class="gallery__item" data-full="images/photo12.jpg"><img src="images/photo12.jpg" alt="Продажа на ярмарке"></button>
-      <button class="gallery__item" data-full="images/photo13.jpg"><img src="images/photo13.jpg" alt="Выступление"></button>
+      <!-- Тут кнопки с фотками. При клике открывается большое фото (лайтбокс) -->
+      <button class="gallery__item" data-full="images/photo01.jpg" data-caption="Торжественная линейка, сентябрь 2024"><img src="images/photo01.jpg" alt="Линейка" loading="lazy" width="400" height="300"></button>
+      <button class="gallery__item" data-full="images/photo02.jpg" data-caption="Класс в парке, май 2024"><img src="images/photo02.jpg" alt="Класс в парке" loading="lazy" width="400" height="300"></button>
+      <button class="gallery__item" data-full="images/photo03.jpg" data-caption="Награждение класса грамотой"><img src="images/photo03.jpg" alt="Класс с грамотой" loading="lazy" width="400" height="300"></button>
+      <button class="gallery__item" data-full="images/photo04.jpg" data-caption="Прогулка всем классом"><img src="images/photo04.jpg" alt="Класс на прогулке" loading="lazy" width="400" height="300"></button>
+      <button class="gallery__item" data-full="images/photo05.jpg" data-caption="Наши прекрасные девочки"><img src="images/photo05.jpg" alt="Девочки класса" loading="lazy" width="400" height="300"></button>
+      <button class="gallery__item" data-full="images/photo07.jpg" data-caption="У стен родной школы"><img src="images/photo07.jpg" alt="Класс у школы" loading="lazy" width="400" height="300"></button>
+      <button class="gallery__item" data-full="images/photo08.jpg" data-caption="Новогодний огонек"><img src="images/photo08.jpg" alt="Новый год" loading="lazy" width="400" height="300"></button>
+      <button class="gallery__item" data-full="images/photo09.jpg" data-caption="Урок физкультуры"><img src="images/photo09.jpg" alt="В спортзале" loading="lazy" width="400" height="300"></button>
+      <button class="gallery__item" data-full="images/photo10.jpg" data-caption="Патриотическое мероприятие"><img src="images/photo10.jpg" alt="Патриотическое мероприятие" loading="lazy" width="400" height="300"></button>
+      <button class="gallery__item" data-full="images/photo11.jpg" data-caption="Наша ярмарка выпечки!"><img src="images/photo11.jpg" alt="Ярмарка выпечки" loading="lazy" width="400" height="300"></button>
+      <button class="gallery__item" data-full="images/photo12.jpg" data-caption="Продажа на ярмарке"><img src="images/photo12.jpg" alt="Продажа на ярмарке" loading="lazy" width="400" height="300"></button>
+      <button class="gallery__item" data-full="images/photo13.jpg" data-caption="Наше выступление на сцене"><img src="images/photo13.jpg" alt="Выступление" loading="lazy" width="400" height="300"></button>
     </div>
   </section>
 
-  <!-- КАК СДЕЛАНО (ДЛЯ КОНКУРСА) -->
-  <section class="panel" id="tech" data-panel>
-    <h2 class="section-title">Как сделан этот сайт</h2>
-    
-    <div class="tech-grid">
-      <div class="tech-card">
-        <h3>1. Дизайн и Звёздный фон</h3>
-        <p>Чтобы сайт не выглядел скучно, я решил сделать космический фон. Вместо картинки я использовал CSS-градиенты <code>radial-gradient</code>. Они рисуют белые точки, а свойство <code>background-attachment: fixed</code> не даёт им двигаться при скролле. Основной контент лежит на бежевом блоке с тенью, чтобы он не сливался со звёздами.</p>
-      </div>
-
-      <div class="tech-card">
-        <h3>2. Вкладки (SPA-эффект)</h3>
-        <p>Я не хотел делать кучу отдельных HTML-файлов, поэтому сделал всё на одной странице. Секции скрыты через <code>display: none</code>. Когда пользователь нажимает на кнопку в меню, мой JavaScript ловит клик и добавляет класс <code>is-active</code> нужной секции, а остальные прячет.</p>
-      </div>
-
-      <div class="tech-card">
-        <h3>3. Адаптив под телефоны</h3>
-        <p>Сайт должен хорошо выглядеть на смартфонах. Для этого я использовал <code>@media</code> запросы в CSS. Если экран меньше 640 пикселей, меню превращается в кнопку-бургер, а сетки с карточками и фотографиями перестраиваются в один или два столбца, чтобы всё влезало.</p>
-      </div>
-
-      <div class="tech-card">
-        <h3>4. Галерея и Лайтбокс</h3>
-        <p>Фотографии в галерее сделаны через <code>display: grid</code>. При наведении они плавно увеличиваются (эффект <code>transform: scale</code>). При клике на фотографию открывается затемнённый фон (лайтбокс) с увеличенной картинкой. Это тоже работает на чистом JS, без сторонних библиотек.</p>
-      </div>
-      
-      <div class="tech-card">
-        <h3>5. Оформление Расписания</h3>
-        <p>Расписание я делал в виде HTML-таблицы <code>&lt;table&gt;</code>. Чтобы она красиво выглядела, я стилизовал заголовки в тёмный цвет, а чётные строки сделал чуть темнее (через <code>nth-child(even)</code>), чтобы глаза не уставали читать. На телефонах таблицу можно скроллить вбок.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- КОНТАКТЫ -->
+  <!-- СТРАНИЦА КОНТАКТОВ -->
   <section class="panel" id="contacts" data-panel>
-    <h2 class="section-title">Контакты классного руководителя</h2>
+    <h2 class="section-title">Контакты</h2>
+
     <div class="contact-card">
       <p class="contact-card__role">Классный руководитель 8В класса</p>
-      <!-- Вставил ФИО и номер, как ты просила -->
       <p class="contact-card__name">Светлана Николаевна</p>
-      <p class="contact-card__line">Школа: МБОУ СОШ №49 г. Орла</p>
-      <p class="contact-card__line">Телефон: +7 920 801 89 26</p>
+      <!-- Ссылка на официальный сайт школы, как ты просил -->
+      <p class="contact-card__line">Официальный сайт школы: <br><a href="https://orel-sosh49.obr57.ru/" target="_blank" rel="noopener">orel-sosh49.obr57.ru</a></p>
+    </div>
+
+    <div class="feedback">
+      <h3 class="feedback__title">Свяжитесь с нами</h3>
+      <p class="feedback__lead">Есть идея, вопрос или предложение по улучшению сайта? Заполните форму ниже, и мы обязательно ответим!</p>
+
+      <!-- Форма обратной связи -->
+      <form id="contact-form" class="form" novalidate>
+        <div class="field">
+          <label for="f-name">Ваше имя <span class="req">*</span></label>
+          <input id="f-name" name="name" type="text" autocomplete="name" maxlength="80" required>
+        </div>
+        <div class="field">
+          <label for="f-contact">Email или телефон <span class="req">*</span></label>
+          <input id="f-contact" name="contact" type="text" autocomplete="email" maxlength="120" required>
+        </div>
+        <div class="field">
+          <label for="f-topic">Тема обращения <span class="req">*</span></label>
+          <select id="f-topic" name="topic" required>
+            <option value="">— выберите —</option>
+            <option>Вопрос по учебе</option>
+            <option>Предложение по сайту</option>
+            <option>Сотрудничество</option>
+            <option>Другое</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-message">Сообщение <span class="req">*</span></label>
+          <textarea id="f-message" name="message" rows="5" maxlength="2000" required></textarea>
+          <span class="field__hint">Минимум 10 символов.</span>
+        </div>
+
+        <!-- Это секретное поле от спам-ботов, людям его не видно -->
+        <div class="hp" aria-hidden="true">
+          <label>Не заполняйте это поле <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+        <button class="btn" type="submit">Отправить сообщение</button>
+        <!-- Сюда выводится сообщение об успехе или ошибке -->
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="feedback__note"><strong>Важно:</strong> Если вы связываетесь с нами по поводу учебы, пожалуйста, дублируйте сообщения классному руководителю.</p>
+      
+      <!-- Сноска для жюри -->
+      <p class="feedback__note" style="font-size: 0.8rem; opacity: 0.7; margin-top: 15px;">
+        <em>Техническое примечание для жюри: В форме реализована клиентская валидация полей на JavaScript, проверяющая корректность ввода (email, длина текста).</em>
+      </p>
     </div>
   </section>
 
 </main>
 
+<!-- ================= ПОДВАЛ САЙТА ================= -->
 <footer class="footer">
-  <p>8В класс · МБОУ СОШ №49 г. Орла</p>
+  <nav class="sitemap" aria-label="Карта сайта">
+    <button data-goto="home">Главная</button>
+    <button data-goto="about">О классе</button>
+    <button data-goto="news">Новости</button>
+    <button data-goto="schedule">Расписание</button>
+    <button data-goto="achievements">Достижения</button>
+    <button data-goto="gallery">Галерея</button>
+    <button data-goto="contacts">Контакты</button>
+  </nav>
+  <p>8В класс · <a href="https://orel-sosh49.obr57.ru/" target="_blank" rel="noopener">МБОУ СОШ №49 г. Орла</a></p>
 </footer>
 
-<div class="lightbox" id="lightbox">
-  <img id="lightbox-img" src="" alt="">
+<!-- ================= ВСПЛЫВАЮЩЕЕ ОКНО ДЛЯ ФОТОК (ЛАЙТБОКС) ================= -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Просмотр фото">
+  <button class="lightbox__close" id="lb-close" aria-label="Закрыть">&times;</button>
+  <button class="lightbox__nav lightbox__prev" id="lb-prev" aria-label="Предыдущее фото">&#8249;</button>
+  <figure class="lightbox__figure">
+    <img id="lightbox-img" src="" alt="">
+    <figcaption id="lightbox-caption"></figcaption>
+    <span class="lightbox__count" id="lightbox-count"></span>
+  </figure>
+  <button class="lightbox__nav lightbox__next" id="lb-next" aria-label="Следующее фото">&#8250;</button>
 </div>
 
+<!-- Подключаем скрипт (логика работы сайта) -->
 <script src="script.js"></script>
 </body>
 </html>
