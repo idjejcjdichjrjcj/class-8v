@@ -625,3 +625,29 @@ table.schedule tr:nth-child(even) td {
     scroll-behavior: auto !important;
   }
 }
+/* ===== ВИДЕО В ГАЛЕРЕЕ ===== */
+.gallery__video-wrap {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.gallery__video {
+  width: 100%;
+  border-radius: 8px;
+  background: #000;
+  display: block;
+  max-height: 340px;
+}
+.gallery__video-caption {
+  font-size: 0.88rem;
+  color: #394A6B;
+  text-align: center;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .gallery__video-wrap { grid-column: span 2; }
+}
